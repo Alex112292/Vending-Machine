@@ -29,50 +29,62 @@ public class vendingMachine
        
         System.out.println("You have selected " + snack + ". One moment please.");
         
-        // TODO: Add code that will ask the user for confirmation on the transaction before it is carried out, and if the user
-        // decides to cancel the transaction, they are given a full refund
+        System.out.println("Are you happy with your selection? If not cancel now by entering 'no'. If you are happy enter 'yes'.");
+        String decision = input2.nextLine();
+        if(decision.equalsIgnoreCase("no")) {
+            Double amountLeft = 0.0;
+            System.out.println("We're sorry you are not happy with your choice. Here is a full refund.");
+            System.out.format("Amount Left: $%.2f", amountLeft);
+            System.out.format("\nAmount Returned: $%.2f", amount);
+        }
+        else if (decision.equalsIgnoreCase("yes")) {
+            Double amountLeft = 0.0;
 
-        Double amountLeft = 0.0;
-        
-        // Switch
-        switch (snack.toLowerCase()) {
-        case "a1": // if its A1 then
-        	System.out.println("Getting A1");
-        	amountLeft = amount - A1;
-        	break;
-        case "a2":
-        	System.out.println("Getting A2");
-        	amountLeft = amount - A2;
-        	break;
-        case "b4":
-        	System.out.println("Getting B4");
-        	amountLeft = amount - B4;
-        	break;
-        case "c7":
-        	System.out.println("Getting C7");
-        	amountLeft = amount - C7;
-        	break;
-        case "a9":
-        	System.out.println("Getting A9");
-        	amountLeft = amount - A9;
-        	break;
-        case "b5":
-        	System.out.println("Getting B5");
-        	amountLeft = amount - B5;
-        	break;
-        case "g8":
-        	System.out.println("Getting G8");
-        	amountLeft = amount - G8;
-        	break;
-		default: // if none match then print this
-			System.out.println("That option does not exist!");
-			break;
-		}
-        
-        // Calculating Amount Left
-        System.out.format("Amount Left: %.2f", amountLeft);
-        
-        // TODO: Give the user a departure message that makes them feel good about their snack choice 
+            // Switch
+            switch (snack.toLowerCase()) {
+                case "a1": // if its A1 then
+                    System.out.println("Getting A1");
+                    amountLeft = amount - A1;
+                    break;
+                case "a2":
+                    System.out.println("Getting A2");
+                    amountLeft = amount - A2;
+                    break;
+                case "b4":
+                    System.out.println("Getting B4");
+                    amountLeft = amount - B4;
+                    break;
+                case "c7":
+                    System.out.println("Getting C7");
+                    amountLeft = amount - C7;
+                    break;
+                case "a9":
+                    System.out.println("Getting A9");
+                    amountLeft = amount - A9;
+                    break;
+                case "b5":
+                    System.out.println("Getting B5");
+                    amountLeft = amount - B5;
+                    break;
+                case "g8":
+                    System.out.println("Getting G8");
+                    amountLeft = amount - G8;
+                    break;
+                default: // if none match then print this
+                    System.out.println("That option does not exist!");
+                    break;
+            }
+            // Calculating Amount Left
+            System.out.format("Amount Left: $%.2f", amountLeft);
+            System.out.println("\nReturning change...");
+            System.out.format("\nAmount Returned: $%.2f", amountLeft);
+            System.out.println("\nWhat a great choice! That is one of my favorites, I hope you enjoy it too! \nHope to see you again real soon!");
+        }
+        else
+        {
+            System.out.println("Invalid feedback. Cancelling Transaction.");
+            System.out.format("\nAmount Returned: $%.2f", amount);
+        }
         
     }
 }
