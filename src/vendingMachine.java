@@ -36,6 +36,26 @@ public class vendingMachine
             System.out.println("We're sorry you are not happy with your choice. Here is a full refund.");
             System.out.format("Amount Left: $%.2f", amountLeft);
             System.out.format("\nAmount Returned: $%.2f", amount);
+            System.out.println("Would you like to order a different snack?  If so, please enter 'yes'.");
+            Scanner input3 = new Scanner(System.in);
+            String reOrder = input3.nextLine();
+             if (reOrder.equalsIgnoreCase("yes")) {
+            	 System.out.println("Welcome to the best snack machine of your life! This machine only accepts $1 bills. Please insert money.");
+                 System.out.println("[A1] Snickers - $1.50, [A2] Chips - $2.00,  [B4] Gatorade - $2.00,  [C7] Reese's - $1.50, [A9] Trail Mix - $3.00, \n [B5] Hershey's - $2.00, [G8] Granola Bar - $2.00");
+                 System.out.println("How many $1 bills would you like to enter?");
+                
+                 Scanner input4 = new Scanner(System.in);
+                 Double amount1 = input4.nextDouble();
+                 int amountInt1 = (int)Math.round(amount1); 
+                 
+                 System.out.println("You have put in " + amountInt1 + " dollar bills");
+                 System.out.println("Please enter your selected snack code number (Ex. A1,A2,B1,...).");
+                
+                 Scanner input5 = new Scanner(System.in);
+                 String snack1 = input5.nextLine();
+                
+                 System.out.println("You have selected " + snack + ". One moment please.");
+             }
         }
         else if (decision.equalsIgnoreCase("yes")) {
             Double amountLeft = 0.0;
