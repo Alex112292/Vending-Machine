@@ -21,22 +21,22 @@ public class vendingMachine
         Double amount = input.nextDouble();
         int amountInt = (int)Math.round(amount); 
         
-        System.out.println("You have put in " + amountInt + " dollar bills");
-        System.out.println("Please enter your selected snack code number (Ex. A1,A2,B1,...).");
-       
+        System.out.println("You have put in " + amountInt + " dollar bills!");
+        System.out.println("Please enter your selected snack code number (Ex. A1,A2,B1,...)!");
+        
         Scanner input2 = new Scanner(System.in);
         String snack = input2.nextLine();
        
-        System.out.println("You have selected " + snack + ". One moment please.");
+        System.out.println("You have selected " + snack + "! One moment please...");
         
-        System.out.println("Are you happy with your selection? If not cancel now by entering 'no'. If you are happy enter 'yes'.");
+        System.out.println("Are you happy with your selection? If not cancel now by entering \"no\". If you are happy enter \"yes\".");
         String decision = input2.nextLine();
         if(decision.equalsIgnoreCase("no")) {
             Double amountLeft = 0.0;
             System.out.println("We're sorry you are not happy with your choice. Here is a full refund.");
             System.out.format("Amount Left: $%.2f", amountLeft);
             System.out.format("\nAmount Returned: $%.2f", amount);
-            System.out.println("Would you like to order a different snack?  If so, please enter 'yes'.");
+            System.out.println("Would you like to order a different snack?  If so, please enter \"yes\".");
             Scanner input3 = new Scanner(System.in);
             String reOrder = input3.nextLine();
              if (reOrder.equalsIgnoreCase("yes")) {
@@ -59,35 +59,42 @@ public class vendingMachine
         }
         else if (decision.equalsIgnoreCase("yes")) {
             Double amountLeft = 0.0;
-
+            String snackName = "";
             // Switch
             switch (snack.toLowerCase()) {
                 case "a1": // if its A1 then
                     System.out.println("Getting [A1] Snickers");
                     amountLeft = amount - A1;
+                    snackName = "Snickers";
                     break;
                 case "a2":
                     System.out.println("Getting [A2] Chips");
                     amountLeft = amount - A2;
+                    snackName = "Chips";
                     break;
                 case "b4":
                     System.out.println("Getting [B4] Gatorade");
                     amountLeft = amount - B4;
+                    snackName = "Gatorade";
                     break;
                 case "c7":
                     System.out.println("Getting [C7] Reese's");
                     amountLeft = amount - C7;
+                    snackName = "Reese's";
                     break;
                 case "a9":
                     System.out.println("Getting [A9] Trail Mix");
                     amountLeft = amount - A9;
+                    snackName = "Trail Mix";
                     break;
                 case "b5":
                     System.out.println("Getting [B5] Hershey's");
+                    snackName = "Hershey's";
                     amountLeft = amount - B5;
                     break;
                 case "g8":
-                    System.out.println("Getting [G8] Granola Bar");
+                    System.out.println("Getting G8");
+                    snackName = "Granola Bar";
                     amountLeft = amount - G8;
                     break;
                 default: // if none match then print this
@@ -98,7 +105,7 @@ public class vendingMachine
             System.out.format("Amount Left: $%.2f", amountLeft);
             System.out.println("\nReturning change...");
             System.out.format("\nAmount Returned: $%.2f", amountLeft);
-            System.out.println("\nWhat a great choice! That is one of my favorites, I hope you enjoy it too! \nHope to see you again real soon!");
+            System.out.println("\n You chose "+ snackName +"! What a great choice! That is one of my favorites, I hope you enjoy it too! \nHope to see you again real soon!");
         }
         else
         {
