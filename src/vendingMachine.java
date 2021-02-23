@@ -1,3 +1,9 @@
+/*
+ * Project: Vending Machine
+ * Date: 2/23/21
+ * Description: Vending Machine which takes user inputs
+*/
+
 import java.util.Scanner;
 
 public class vendingMachine
